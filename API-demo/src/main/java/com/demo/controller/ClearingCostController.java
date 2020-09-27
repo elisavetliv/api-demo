@@ -48,9 +48,6 @@ public class ClearingCostController{
 	
 	@DeleteMapping(path="{country}")
 	public String deleteClearingCost(@PathVariable String country) {
-		if (!(country.equals("GR") || country.equals("US"))) {
-			country= "Others";
-		} 
 		elasticsearch.deleteData(country);
 		return "Clearing cost of country "+country+" is deleted";
 	}
